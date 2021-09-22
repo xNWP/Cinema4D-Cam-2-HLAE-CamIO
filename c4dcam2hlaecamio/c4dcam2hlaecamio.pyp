@@ -33,8 +33,8 @@ from c4d import storage
 import math
 
 # Global Vars
-PLUGIN_VERSION = "v1.0"
-PLUGIN_VERSION_FLOAT = 1.0
+PLUGIN_VERSION = "v1.1"
+PLUGIN_VERSION_FLOAT = 1.1
 PLUGIN_NAME = "Cinema4D Camera 2 HLAE CamIO " + PLUGIN_VERSION
 PLUGIN_DESCRIPTION = "Converts Cinema4D Camera Data to HLAE CamIO Camera Data."
 PLUGIN_ID = 1039644  # Registered Plugin ID
@@ -59,12 +59,12 @@ def DoWork(MODE):
 	CAMERA = CurrentProj.GetActiveObject()
 	
 	# Console
-	print "%s: Starting export with following settings." % (PLUGIN_NAME)
-	print "~~ Camera: %s" % (CAMERA.GetName())
-	print "~~ File: %s" % (filepath)
-	print "~~ Frames: %s" % (NumberOfFrames)
-	print "~~ Framerate: %s" % (FPS)
-	print "~~ Length(s): %s" % (LengthInSec)
+	print ("%s: Starting export with following settings." % (PLUGIN_NAME))
+	print ("~~ Camera: %s" % (CAMERA.GetName()))
+	print ("~~ File: %s" % (filepath))
+	print ("~~ Frames: %s" % (NumberOfFrames))
+	print ("~~ Framerate: %s" % (FPS))
+	print ("~~ Length(s): %s" % (LengthInSec))
 	
 	# Init lists
 	RawData = [None]*NumberOfFrames
@@ -283,7 +283,7 @@ class C4DCam2HLAECamIO(plugins.CommandData):
 		obj = CurrentProj.GetActiveObject()
 		
 		if(type(obj) != c4d.CameraObject):
-			print "%s: Bad Object Type." % (PLUGIN_NAME)
+			print ("%s: Bad Object Type." % (PLUGIN_NAME))
 			gui.MessageDialog("Please select a Camera to export first.")
 			return False
 		else:		
@@ -305,7 +305,7 @@ def main():
 	plugins.RegisterCommandPlugin(PLUGIN_ID, PLUGIN_NAME, 0, icon, PLUGIN_DESCRIPTION, C4DCam2HLAECamIO())
 	
 	# Console confirmation
-	print "Loaded %s" % (PLUGIN_NAME)
+	print ("Loaded %s" % (PLUGIN_NAME))
 
 # Main Execution
 main()
