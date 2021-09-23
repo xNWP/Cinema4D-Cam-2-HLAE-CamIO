@@ -33,9 +33,10 @@ from c4d import storage
 import math
 
 # Global Vars
-PLUGIN_VERSION = "v1.1"
-PLUGIN_VERSION_FLOAT = 1.1
-PLUGIN_NAME = "Cinema4D Camera 2 HLAE CamIO " + PLUGIN_VERSION
+PLUGIN_VERSION_MAJOR = 1
+PLUGIN_VERSION_MINOR = 1
+PLUGIN_VERSION_STR = "v{}.{}".format(PLUGIN_VERSION_MAJOR, PLUGIN_VERSION_MINOR)
+PLUGIN_NAME = "Cinema4D Camera 2 HLAE CamIO " + PLUGIN_VERSION_STR
 PLUGIN_DESCRIPTION = "Converts Cinema4D Camera Data to HLAE CamIO Camera Data."
 PLUGIN_ID = 1039644  # Registered Plugin ID
 PLUGIN_WEBPAGE = "http://github.com/xNWP"
@@ -93,7 +94,6 @@ def DoWork(MODE):
 		i = i + 1
 		StartFrame = StartFrame + 1
 	
-	c4d.StatusClear()
 	c4d.StatusSetSpin()
 	c4d.StatusSetText("HLAE CamIO Export: Writing File...")
 	
@@ -202,7 +202,7 @@ class PrimaryUI(gui.GeDialog):
 	
 		self.GroupBegin(100, c4d.BFH_SCALE, 1, 4) # PROGRAM INFO GROUP
 		
-		self.AddStaticText(101, c4d.BFH_RIGHT, 0, 0, PLUGIN_VERSION)
+		self.AddStaticText(101, c4d.BFH_RIGHT, 0, 0, PLUGIN_VERSION_STR)
 		self.AddStaticText(102, c4d.BFH_CENTER, 0, 0, PLUGIN_DESCRIPTION)
 		self.AddStaticText(103, c4d.BFH_CENTER, 0, 0, "Plugin by xNWP")
 		self.AddStaticText(104, c4d.BFH_CENTER, 0, 0, PLUGIN_WEBPAGE)

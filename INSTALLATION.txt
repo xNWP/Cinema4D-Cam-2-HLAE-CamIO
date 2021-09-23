@@ -1,7 +1,7 @@
 == INSTALLATION ==
 
-To install - simply copy the folder 'c4dcam2hlaecamio' to the Cinema4D Plugins folder,
-usually located at: C:\Program Files\MAXON\CINEMA 4D R17\plugins
+To install - simply copy the folder 'c4dcam2hlaecamio' to the Cinema4D Plugins folder, usually located at:
+    C:\Program Files\MAXON\CINEMA 4D <version>\plugins
 
 == USAGE ==
 
@@ -10,12 +10,3 @@ Select the project orientation -Z Up or +Y Up - click export and choose a locati
 
 GL and HF !
 - Brett "xNWP" Anthony
-
-
-
-
-
-
-Like the plugin?
-Send me some stuff to play/use/sell for coffee money :-)
-https://steamcommunity.com/tradeoffer/new/?partner=37630060&token=pGfgBYGY
